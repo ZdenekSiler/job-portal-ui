@@ -195,6 +195,18 @@ const Footer = () => {
               >
                 <span className="relative z-10">Contact Us</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-primary-600/20 to-purple-600/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 -inset-2"></div>
+                <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 w-72 bg-gray-800 border border-gray-700 rounded-xl p-4 text-xs text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-50 shadow-xl">
+                  <p className="font-semibold text-white mb-2">Contact Us</p>
+                  <p className="leading-relaxed mb-2">
+                    Our support team is here to help with any questions, feedback, or issues you may have.
+                  </p>
+                  <p className="leading-relaxed mb-2">
+                    <span className="text-primary-400 font-medium">Get assistance with</span> technical problems, account questions, job application support, or share suggestions for improvements.
+                  </p>
+                  <p className="leading-relaxed text-gray-400">
+                    We typically respond within 24 hours and are committed to providing excellent support for all JobPortal users.
+                  </p>
+                </div>
               </Link>
             </div>
             <div className="text-center md:text-right">
