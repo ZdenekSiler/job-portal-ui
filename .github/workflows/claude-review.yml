@@ -29,4 +29,16 @@ jobs:
           track_progress: true
           plugin_marketplaces: "https://github.com/anthropics/claude-code.git"
           plugins: "code-review@claude-code-plugins"
-          prompt: "/code-review:code-review ${{ github.repository }}/pull/${{ github.event.pull_request.number }}"
+          prompt: | # "/code-review:code-review ${{ github.repository }}/pull/${{ github.event.pull_request.number }}"
+            REPO: ${{ github.repository }}
+            PR NUMBER: ${{ github.event.pull_request.number }}
+
+            Please review the PRQ and provide feedback on:
+            - Code quality and best practices
+            - Potential bugs or issues
+            - Performance considerations
+            - Security concerns
+            - Test coverage
+
+            Use the repository's CLAUDE.md for guidance and conventions. Be constructive and helpful in your feedback.
+            Use `gh pr comment` with your bash tool to leave the review as a comment on the PRQ.
