@@ -31,7 +31,6 @@ const SavedJobs = () => {
     const result = applyForJob(job);
     if (result.success) {
       // Could add a toast notification here
-      console.log('Application submitted successfully!');
     } else {
       console.error(result.error);
     }
