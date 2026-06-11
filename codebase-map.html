@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html><head>
+  <meta charset="utf-8"><title>Codebase Explorer</title>
+  <style>
+    body { font: 14px/1.5 system-ui, sans-serif; margin: 0; background: #1a1a2e; color: #eee; }
+    .container { display: flex; height: 100vh; }
+    .sidebar { width: 280px; background: #252542; padding: 20px; border-right: 1px solid #3d3d5c; overflow-y: auto; flex-shrink: 0; }
+    .main { flex: 1; padding: 20px; overflow-y: auto; }
+    h1 { margin: 0 0 10px 0; font-size: 18px; }
+    h2 { margin: 20px 0 10px 0; font-size: 14px; color: #888; text-transform: uppercase; }
+    .stat { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #3d3d5c; }
+    .stat-value { font-weight: bold; }
+    .bar-row { display: flex; align-items: center; margin: 6px 0; }
+    .bar-label { width: 55px; font-size: 12px; color: #aaa; }
+    .bar { height: 18px; border-radius: 3px; }
+    .bar-pct { margin-left: 8px; font-size: 12px; color: #666; }
+    .tree { list-style: none; padding-left: 20px; }
+    details { cursor: pointer; }
+    summary { padding: 4px 8px; border-radius: 4px; }
+    summary:hover { background: #2d2d44; }
+    .folder { color: #ffd700; }
+    .file { display: flex; align-items: center; padding: 4px 8px; border-radius: 4px; }
+    .file:hover { background: #2d2d44; }
+    .size { color: #888; margin-left: auto; font-size: 12px; }
+    .dot { width: 8px; height: 8px; border-radius: 50%; margin-right: 8px; }
+  </style>
+</head><body>
+  <div class="container">
+    <div class="sidebar">
+      <h1>📊 Summary</h1>
+      <div class="stat"><span>Files</span><span class="stat-value">90</span></div>
+      <div class="stat"><span>Directories</span><span class="stat-value">13</span></div>
+      <div class="stat"><span>Total size</span><span class="stat-value">1.2 MB</span></div>
+      <div class="stat"><span>File types</span><span class="stat-value">10</span></div>
+      <h2>By file type</h2>
+      <div class="bar-row"><span class="bar-label">.jsx</span><div class="bar" style="width:38.094597579308335%;background:#61dafb"></div><span class="bar-pct">38.1%</span></div><div class="bar-row"><span class="bar-label">.json</span><div class="bar" style="width:24.292512852807366%;background:#6b7280"></div><span class="bar-pct">24.3%</span></div><div class="bar-row"><span class="bar-label">.pdf</span><div class="bar" style="width:16.16354686278391%;background:#6b7280"></div><span class="bar-pct">16.2%</span></div><div class="bar-row"><span class="bar-label">.png</span><div class="bar" style="width:14.759539584048229%;background:#6b7280"></div><span class="bar-pct">14.8%</span></div><div class="bar-row"><span class="bar-label">.js</span><div class="bar" style="width:2.6864984955700133%;background:#f7df1e"></div><span class="bar-pct">2.7%</span></div><div class="bar-row"><span class="bar-label">.md</span><div class="bar" style="width:1.75495177952248%;background:#083fa1"></div><span class="bar-pct">1.8%</span></div><div class="bar-row"><span class="bar-label">.svg</span><div class="bar" style="width:1.1025863050633986%;background:#6b7280"></div><span class="bar-pct">1.1%</span></div><div class="bar-row"><span class="bar-label">.html</span><div class="bar" style="width:0.8781255039286373%;background:#e34c26"></div><span class="bar-pct">0.9%</span></div>
+    </div>
+    <div class="main">
+      <h1>📁 job-portal-ui</h1>
+      <ul class="tree" id="root"></ul>
+    </div>
+  </div>
+  <script>
+    const data = {"name": "job-portal-ui", "children": [{"name": "CLAUDE.md", "size": 1485, "ext": ".md"}, {"name": "JobPortal+React+UI+App+setup+guide.pdf", "size": 211495, "ext": ".pdf"}, {"name": "change-investigation-report.md", "size": 6938, "ext": ".md"}, {"name": "codebase-map.html", "size": 10793, "ext": ".html"}, {"name": "eslint.config.js", "size": 763, "ext": ".js"}, {"name": "index.html", "size": 697, "ext": ".html"}, {"name": "package-lock.json", "size": 316765, "ext": ".json"}, {"name": "package.json", "size": 1095, "ext": ".json"}, {"name": "public", "children": [{"name": "favicon.svg", "size": 439, "ext": ".svg"}, {"name": "logos", "children": [{"name": "adobe.svg", "size": 397, "ext": ".svg"}, {"name": "airbnb.png", "size": 13088, "ext": ".png"}, {"name": "amazon.png", "size": 5490, "ext": ".png"}, {"name": "apple.png", "size": 2799, "ext": ".png"}, {"name": "canva.png", "size": 16303, "ext": ".png"}, {"name": "coinbase.png", "size": 2630, "ext": ".png"}, {"name": "databricks.png", "size": 12753, "ext": ".png"}, {"name": "figma.png", "size": 1828, "ext": ".png"}, {"name": "github.png", "size": 2836, "ext": ".png"}, {"name": "google.png", "size": 3428, "ext": ".png"}, {"name": "ibm.svg", "size": 3735, "ext": ".svg"}, {"name": "intel.png", "size": 6031, "ext": ".png"}, {"name": "meta.png", "size": 6459, "ext": ".png"}, {"name": "microsoft.png", "size": 618, "ext": ".png"}, {"name": "netflix.png", "size": 6153, "ext": ".png"}, {"name": "nvidia.png", "size": 10896, "ext": ".png"}, {"name": "oracle.png", "size": 7397, "ext": ".png"}, {"name": "palantir.png", "size": 2889, "ext": ".png"}, {"name": "salesforce.png", "size": 10744, "ext": ".png"}, {"name": "shopify.png", "size": 8296, "ext": ".png"}, {"name": "slack.png", "size": 3395, "ext": ".png"}, {"name": "snowflake.png", "size": 18717, "ext": ".png"}, {"name": "spotify.png", "size": 12871, "ext": ".png"}, {"name": "square.png", "size": 2022, "ext": ".png"}, {"name": "stripe.png", "size": 6441, "ext": ".png"}, {"name": "techcorp.png", "size": 10080, "ext": ".png"}, {"name": "tesla.png", "size": 6223, "ext": ".png"}, {"name": "twilio.png", "size": 9262, "ext": ".png"}, {"name": "uber.png", "size": 3475, "ext": ".png"}, {"name": "zoom.svg", "size": 4233, "ext": ".svg"}], "size": 201489}, {"name": "vite.svg", "size": 1497, "ext": ".svg"}], "size": 203425}, {"name": "specs", "children": [{"name": "issue-13-spec.md", "size": 5425, "ext": ".md"}, {"name": "issue-5-spec.md", "size": 4793, "ext": ".md"}, {"name": "issue-9-spec.md", "size": 4322, "ext": ".md"}], "size": 14540}, {"name": "src", "children": [{"name": "App.css", "size": 606, "ext": ".css"}, {"name": "App.jsx", "size": 5477, "ext": ".jsx"}, {"name": "assets", "children": [{"name": "react.svg", "size": 4126, "ext": ".svg"}], "size": 4126}, {"name": "components", "children": [{"name": "CompaniesSection.jsx", "size": 8677, "ext": ".jsx"}, {"name": "ConfirmationModal.jsx", "size": 3619, "ext": ".jsx"}, {"name": "Footer.jsx", "size": 14765, "ext": ".jsx"}, {"name": "Hero.jsx", "size": 11274, "ext": ".jsx"}, {"name": "JobsSection.jsx", "size": 13658, "ext": ".jsx"}, {"name": "Layout.jsx", "size": 335, "ext": ".jsx"}, {"name": "Navbar.jsx", "size": 25975, "ext": ".jsx"}, {"name": "ProtectedRoute.jsx", "size": 859, "ext": ".jsx"}, {"name": "RefreshButton.jsx", "size": 2732, "ext": ".jsx"}, {"name": "ScrollToTop.jsx", "size": 422, "ext": ".jsx"}], "size": 82316}, {"name": "context", "children": [{"name": "AuthContext.jsx", "size": 10176, "ext": ".jsx"}, {"name": "JobContext.jsx", "size": 13031, "ext": ".jsx"}, {"name": "ThemeContext.jsx", "size": 1565, "ext": ".jsx"}], "size": 24772}, {"name": "contexts", "children": [{"name": "CompaniesContext.jsx", "size": 3256, "ext": ".jsx"}, {"name": "JobsDataContext.jsx", "size": 4300, "ext": ".jsx"}], "size": 7556}, {"name": "data", "children": [{"name": "mockData.js", "size": 22613, "ext": ".js"}], "size": 22613}, {"name": "index.css", "size": 2896, "ext": ".css"}, {"name": "main.jsx", "size": 229, "ext": ".jsx"}, {"name": "pages", "children": [{"name": "AppliedJobs.jsx", "size": 14585, "ext": ".jsx"}, {"name": "Companies.jsx", "size": 20053, "ext": ".jsx"}, {"name": "CompanyDetail.jsx", "size": 28450, "ext": ".jsx"}, {"name": "Contact.jsx", "size": 16155, "ext": ".jsx"}, {"name": "Home.jsx", "size": 2151, "ext": ".jsx"}, {"name": "JobApplicants.jsx", "size": 40399, "ext": ".jsx"}, {"name": "JobDetail.jsx", "size": 24599, "ext": ".jsx"}, {"name": "Jobs.jsx", "size": 30448, "ext": ".jsx"}, {"name": "Login.jsx", "size": 14256, "ext": ".jsx"}, {"name": "MyJobs.jsx", "size": 22808, "ext": ".jsx"}, {"name": "PostJob.jsx", "size": 27434, "ext": ".jsx"}, {"name": "Profile.jsx", "size": 31136, "ext": ".jsx"}, {"name": "Register.jsx", "size": 13191, "ext": ".jsx"}, {"name": "SavedJobs.jsx", "size": 12902, "ext": ".jsx"}, {"name": "admin", "children": [{"name": "CompanyManagement.jsx", "size": 32770, "ext": ".jsx"}, {"name": "ContactMessages.jsx", "size": 27489, "ext": ".jsx"}, {"name": "Dashboard.jsx", "size": 6041, "ext": ".jsx"}, {"name": "EmployerManagement.jsx", "size": 13239, "ext": ".jsx"}], "size": 79539}], "size": 378106}, {"name": "services", "children": [{"name": "companyService.js", "size": 1234, "ext": ".js"}, {"name": "contactService.js", "size": 2713, "ext": ".js"}, {"name": "jobApplicationService.js", "size": 3398, "ext": ".js"}, {"name": "profileService.js", "size": 2426, "ext": ".js"}, {"name": "savedJobService.js", "size": 1697, "ext": ".js"}], "size": 11468}, {"name": "utils", "children": [{"name": "delay.js", "size": 84, "ext": ".js"}], "size": 84}], "size": 540249}, {"name": "text.txt", "size": 0, "ext": ".txt"}, {"name": "vite.config.js", "size": 224, "ext": ".js"}], "size": 1308469};
+    const colors = {".js": "#f7df1e", ".ts": "#3178c6", ".py": "#3776ab", ".go": "#00add8", ".rs": "#dea584", ".rb": "#cc342d", ".css": "#264de4", ".html": "#e34c26", ".json": "#6b7280", ".md": "#083fa1", ".yaml": "#cb171e", ".yml": "#cb171e", ".mdx": "#083fa1", ".tsx": "#3178c6", ".jsx": "#61dafb", ".sh": "#4eaa25"};
+    function fmt(b) { if (b < 1024) return b + ' B'; if (b < 1048576) return (b/1024).toFixed(1) + ' KB'; return (b/1048576).toFixed(1) + ' MB'; }
+    function esc(s) { return s.replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
+    function render(node, parent) {
+      if (node.children) {
+        const det = document.createElement('details');
+        det.open = parent === document.getElementById('root');
+        det.innerHTML = `<summary><span class="folder">📁 ${esc(node.name)}</span><span class="size">${fmt(node.size)}</span></summary>`;
+        const ul = document.createElement('ul'); ul.className = 'tree';
+        node.children.sort((a,b) => (b.children?1:0)-(a.children?1:0) || a.name.localeCompare(b.name));
+        node.children.forEach(c => render(c, ul));
+        det.appendChild(ul);
+        const li = document.createElement('li'); li.appendChild(det); parent.appendChild(li);
+      } else {
+        const li = document.createElement('li'); li.className = 'file';
+        li.innerHTML = `<span class="dot" style="background:${colors[node.ext]||'#6b7280'}"></span>${esc(node.name)}<span class="size">${fmt(node.size)}</span>`;
+        parent.appendChild(li);
+      }
+    }
+    data.children.forEach(c => render(c, document.getElementById('root')));
+  </script>
+</body></html>
